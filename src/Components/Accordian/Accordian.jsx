@@ -13,7 +13,7 @@ export const Accordian = () => {
 
   return (
     <div className='wrapper'>
-    <button> Enable multsgitelection</button>
+    <button> Enable multisgitelection</button>
       <div className='accordian'>
         {
           data && data.length > 0 ?
