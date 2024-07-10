@@ -18,7 +18,7 @@ export const Accordian = () => {
     const findIndexOfCurrentId = copyMultiple.indexOf(getCurrentId);
     console.log(findIndexOfCurrentId);
     if (findIndexOfCurrentId === -1) copyMultiple.push(getCurrentId);
-    else copyMultiple.slice(findIndexOfCurrentId);
+    else copyMultiple.splice(findIndexOfCurrentId);
     setMultiselection(copyMultiple);
   }
 
@@ -35,17 +35,17 @@ export const Accordian = () => {
               <h3>{dataItem.question}</h3>
               <span>+</span>
             </div>
-            {/* {
-              enableMultiSelection
-              ?multiSelection.indexOf(dataItem.id) !== -1 && (<div className='content'> {dataItem.answer} </div> )
-              : selected === dataItem.id && (<div className='content'> {dataItem.answer}</div>)
-            } */}
             {
-              selected === dataItem.id || multiSelection.indexOf(dataItem.id) == -1 
+              enableMultiSelection
+              ? multiSelection.indexOf(dataItem.id) !== -1 && (<div className='content'> {dataItem.answer} </div> )
+              : selected === dataItem.id && (<div className='content'> {dataItem.answer}</div>)
+            }
+            {/* {
+              selected === dataItem.id || multiSelection.indexOf(dataItem.id) !== -1 
             ?
                <div className='content'>{dataItem.answer}</div>
                :null
-            }
+            } */}
           </div>)
           :<div>No data found !</div>
         }
